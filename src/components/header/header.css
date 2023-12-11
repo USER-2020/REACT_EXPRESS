@@ -1,0 +1,25 @@
+/* En tu archivo CSS (por ejemplo, TuComponente.css) */
+.contenedor {
+    position: relative;
+  }
+  
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  
+  .imagenCamisa {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .colores {
+    position: relative;
+    z-index: 0;
+  }
+  
+  /* Agrega otros estilos según sea necesario */
+  

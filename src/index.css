@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Migha';
+  src: url('./assets/fonts/migha/Migha-BlackCNTR.otf');
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Migha';
   line-height: 1.5;
   font-weight: 400;
 
