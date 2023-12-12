@@ -1,10 +1,15 @@
 @font-face {
-  font-family: 'Migha';
-  src: url('./assets/fonts/migha/Migha-BlackCNTR.otf');
+  font-family: 'MighaCNTR';
+  src: url('./assets/fonts/migha/Migha-BlackCNTR.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaThin';
+  src: url('./assets/fonts/migha/Migha-ThinCondensedCNTR.otf') format('opentype');
 }
 
 :root {
-  font-family: 'Migha';
+  font-family: 'MighaCNTR';
   line-height: 1.5;
   font-weight: 400;
 
