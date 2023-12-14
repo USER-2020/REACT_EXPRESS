@@ -37,24 +37,26 @@ const Header = () => {
     ]
 
     return (
-        <div className='contenedor'>
-            <div className="title">
-                {/* <h1>VISTE </h1>
+        <div className="container">
+            <div className='contenedor'>
+                <div className="title">
+                    {/* <h1>VISTE </h1>
                 <h1>SIEMPRE CON</h1>
                 <h1>ELEGANCIA</h1> */}
-            </div>
-            <div className="imagenCamisa">
-                <img src={shirtSelected} alt="" width={700} />
-            </div>
-            <div className="colores">
-                {colorShirts.map((color, index) => (
-                    <button
-                        key={index}
-                        className="circulo"
-                        style={{ backgroundColor: color, width:10, height:10, borderRadius:100 }}
-                        onClick={() => cambiarColor(color)}
-                    />
-                ))}
+                </div>
+                <div className="imagenCamisa">
+                    <img src={shirtSelected} alt="" />
+                </div>
+                <div className="colores">
+                    {colorShirts.map((color, index) => (
+                        <button
+                            key={index}
+                            className="circulo"
+                            style={{ backgroundColor: color, width: 10, height: 10, borderRadius: 100 }}
+                            onClick={() => cambiarColor(color)}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )

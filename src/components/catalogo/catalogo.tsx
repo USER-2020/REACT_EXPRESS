@@ -3,7 +3,7 @@ import React from 'react'
 const Catalogo = () => {
     return (
         <>
-            <div>
+            <div className='container'>
                 <div className='row mt-4 w-100'>
                     {/* <div className='col-md-4'> */}
                         <div className='d-flex justify-content-around flex-wrap' style={{ gap: '20px' }}>

@@ -5,7 +5,8 @@
     gap: 10px;
     font-family: 'MighaThin';
     font-size: 20px;
-    width: 98vw;
+    width: 100%;
+    
     /* Espaciado entre las columnas */
 }
 
@@ -69,4 +70,17 @@
 .color_5{
     background-color: #9A1423;
     color: white;
+}
+
+@media (max-width: 768px){
+    .containerColor_2 {
+       
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        
+        
+        /* Ocupar dos columnas completas */
+    }
 }
