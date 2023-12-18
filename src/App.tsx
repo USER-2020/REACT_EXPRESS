@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import Banner from './containers/BANNER/banner'
 import Carrousel from './containers/CARROUSEL/carrousel'
