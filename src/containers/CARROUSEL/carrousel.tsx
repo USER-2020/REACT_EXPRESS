@@ -3,7 +3,7 @@ import Carrous from '../../components/CARROUS/carrous'
 import './carrousel.css'
 const Carrousel = () => {
   return (
-    <div>Carrousel
+    <div className='carrousel'>
       <Carrous/>
     </div>
   )
