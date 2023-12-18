@@ -3,9 +3,7 @@ import React from 'react'
 const Bannerimg = () => {
   return (
     <div>
-        <h1>
-            BannerIMG
-        </h1>
+        BannerIMG
     </div>
   )
 }
