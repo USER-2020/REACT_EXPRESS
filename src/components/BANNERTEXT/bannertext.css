@@ -1,0 +1,20 @@
+.bannerT{
+    background-color: #fdfdfd;
+    flex: 3;
+    box-shadow: 0px 0px 0px 4px #141414 inset;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.bannerT .newL {
+    background-color: aliceblue;
+    flex: 5;
+    box-shadow: 0px 0px 0px 4px #141414 inset;
+}
+
+.bannerT .prodI {
+    background-color: chartreuse;
+    flex: 3;
+    box-shadow: 0px 0px 0px 4px #141414 inset;
+}

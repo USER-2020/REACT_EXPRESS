@@ -1,0 +1,56 @@
+.navb {
+    width: 100%;
+    height: 100px;
+    background-color: #141414;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navba {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navba .logo {
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.navba img {
+    width: 110px;
+}
+
+.navb a {
+    text-decoration: none;
+    color: #FDFDFD;
+}
+
+.navb a:hover {
+    color: #d6d6d6;
+}
+
+.navb h1 {
+    font-family: 'MighaThin';
+    font-size: 22px;
+}
+
+.navb .links {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navb .links:last-child {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

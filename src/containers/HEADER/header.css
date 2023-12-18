@@ -1,0 +1,12 @@
+.section {
+    width: 100%;
+    height: 100vh;
+    background-color: #141414;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'MighaThin';
+    font-size: 100px;
+    pointer-events: none;
+}
