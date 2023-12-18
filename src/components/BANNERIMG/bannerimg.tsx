@@ -1,11 +1,9 @@
 import React from 'react'
-
+import './bannerimg.css';
 const Bannerimg = () => {
   return (
     <div>
-        <h1>
-            BannerIMG
-        </h1>
+        BannerIMG
     </div>
   )
 }
