@@ -1,12 +1,45 @@
 .carrous {
     width: 100%;
     height: 100%;
-    background-color: #fdfdfd;
+    background-color: #141414;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Splide {
+.carrous > .splide {
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.carrous > .splide img{
+    width: 100%;
+}
+
+.carrous > .splide > .splide__pagination {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+}
+
+.carrous > .splide > .splide__pagination .splide__pagination__page {
+    width: 8rem;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #fdfdfd;
+    opacity: 100%;
+
+}
+
+.carrous > .splide > .splide__pagination .splide__pagination__page:hover {
+    background-color: #141414;
+}
+
+.carrous > .splide > .splide__pagination .splide__pagination__page.is-active {
+    background-color: #FFBF00;
 }
