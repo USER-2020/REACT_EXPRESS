@@ -10,6 +10,11 @@
     font-size: 100px;
     pointer-events: none;
     flex-direction: column;
+    text-align: center;
+}
+
+.section h1{
+    font-size: 200px;
 }
 
 .puff-in-center {
