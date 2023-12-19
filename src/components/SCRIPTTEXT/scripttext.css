@@ -21,7 +21,7 @@
 .text {
   align-self: center;
   flex-direction: column;
-  width: 600px;
+  width: 700px;
 }
 
 .text .line {
@@ -34,7 +34,7 @@
 .word {
   color: #fdfdfd;
   font-size: 6vw;
-  font-family: "MighaTHIN";
+  font-family: "MighaThin";
   margin: 0rem;
   text-transform: uppercase;
   cursor: crosshair;
@@ -80,7 +80,7 @@ a {
   }
    */
   .fancy:hover > .outer:nth-child(1) {
-    transform: translate(-60%, 20%) rotate(8deg);
+    transform: translate(-20%, 20%) rotate(8deg);
   }
   
   .fancy:hover > .outer:nth-child(2) {

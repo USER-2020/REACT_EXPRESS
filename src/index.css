@@ -8,6 +8,41 @@
   src: url('./assets/fonts/migha/Migha-ThinCondensedCNTR.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'MighaMedium';
+  src: url('./assets/fonts/migha/Migha-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaMediumItalic';
+  src: url('./assets/fonts/migha/Migha-MediumSlant.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaSlant';
+  src: url('./assets/fonts/migha/Migha-Slant.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaLight';
+  src: url('./assets/fonts/migha/Migha-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaExSlant';
+  src: url('./assets/fonts/migha/Migha-ExpandedSlant.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaThinSlant';
+  src: url('./assets/fonts/migha/Migha-ThinSlant.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MighaThinEx';
+  src: url('./assets/fonts/migha/Migha-ThinExpanded.otf') format('opentype');
+}
+
 :root {
   font-family: 'MighaCNTR';
   line-height: 1.5;
