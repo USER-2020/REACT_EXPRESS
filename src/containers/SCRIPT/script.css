@@ -1,7 +1,7 @@
 .script {
     background-color: #141414;
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
