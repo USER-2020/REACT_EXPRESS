@@ -1,14 +1,18 @@
-import React from 'react'
-import Scriptbut from '../../components/SCRIPTBUT/scriptbut'
-import Scripttext from '../../components/SCRIPTTEXT/scripttext'
-import './script.css'
+import React from "react";
+import Scriptbut from "../../components/SCRIPTBUT/scriptbut";
+import Scripttext from "../../components/SCRIPTTEXT/scripttext";
+import "./script.css";
 const Script = () => {
   return (
-    <div className='script'>
-      <Scripttext/>
-      <Scriptbut/>
+    <div className="script">
+      <div className="scriptt">
+        <Scripttext/>
+      </div>
+      {/* <div className="scriptb">
+        <Scriptbut/>
+      </div> */}
     </div>
-  )
-}
+  );
+};
 
-export default Script
+export default Script;
