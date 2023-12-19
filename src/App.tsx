@@ -16,13 +16,13 @@ function App() {
   return (
     <>
       <div>
-        <Header/>
-        <Banner/>
-        <Carrousel/>
-        <Script/>
-        <Products/>
-        <Newsletter/>
-        <Footer/>
+        <section><Header /></section>
+        <section><Banner /></section>
+        <section><Carrousel /></section>
+        <section><Script /></section>
+        <section><Products /></section>
+        <section><Newsletter /></section>
+        <section><Footer /></section>
       </div>
     </>
   )
