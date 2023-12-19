@@ -4,7 +4,7 @@ import Scripttext from '../../components/SCRIPTTEXT/scripttext'
 import './script.css'
 const Script = () => {
   return (
-    <div>Script
+    <div className='script'>
       <Scripttext/>
       <Scriptbut/>
     </div>
