@@ -49,7 +49,8 @@
 }
 
 .navb .links:last-child {
-    width: 300px;
+    width: 120px;
+    margin-left: 180px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

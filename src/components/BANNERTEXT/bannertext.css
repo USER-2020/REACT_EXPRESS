@@ -1,20 +1,41 @@
 .bannerT{
-    background-color: #fdfdfd;
+    background-color: #141414;
     flex: 3;
-    box-shadow: 0px 0px 0px 4px #141414 inset;
+    margin-top: 0px !important;
+    margin: 4px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
 .bannerT .newL {
-    background-color: aliceblue;
-    flex: 5;
-    box-shadow: 0px 0px 0px 4px #141414 inset;
+    background-color: #fdfdfd;
+    flex: 2;
+    margin-top: 0px !important;
+    margin: 4px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bannerT .newL h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: "MighaMedium";
+    color: #141414;
+    text-align: end;
+}
+
+.bannerT .newL h2 {
+    margin: 0;
+    font-family: "MighaThin";
+    color: #141414;
+    text-align: end;
 }
 
 .bannerT .prodI {
     background-color: chartreuse;
-    flex: 3;
-    box-shadow: 0px 0px 0px 4px #141414 inset;
+    flex: 1;
+    margin: 4px;
 }
