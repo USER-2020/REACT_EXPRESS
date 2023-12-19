@@ -1,5 +1,21 @@
 .bannerI {
-    background-color: #fdfdfd;
+    height: calc(100vh - 78px);
     flex: 4;
-    box-shadow: 0px 0px 0px 4px #141414 inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+
+.bannerI img {
+    width: 65%;
+    transition: cubic-bezier(.72,.04,.34,.96);
+    transition-duration: 800ms;
+}
+
+.bannerI img:hover {
+    width: 110%;
 }
