@@ -24,28 +24,28 @@ const Carrous = () => {
         aria-label="My Favorite Images"
       >
         <SplideSlide>
-          <img src={img1} alt="Image 1" width={100}/>
+          <img src={img1} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img2} alt="Image 1" width={100}/>
+          <img src={img2} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img3} alt="Image 1" width={100}/>
+          <img src={img3} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img4} alt="Image 1" width={100}/>
+          <img src={img4} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img5} alt="Image 1" width={100}/>
+          <img src={img5} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img6} alt="Image 1" width={100}/>
+          <img src={img6} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img7} alt="Image 1" width={100}/>
+          <img src={img7} alt="Image 1" width={200}/>
         </SplideSlide>
         <SplideSlide>
-          <img src={img8} alt="Image 1" width={100}/>
+          <img src={img8} alt="Image 1" width={200}/>
         </SplideSlide>
       </Splide>
     </div>
