@@ -2,4 +2,22 @@
     background-color: #141414;
     width: 100%;
     height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.script .scriptt {
+    flex: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.script .scriptb {
+    background-color: rgb(43, 226, 89);
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
