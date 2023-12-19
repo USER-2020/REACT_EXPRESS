@@ -37,6 +37,19 @@ body {
   width: 100%;
 }
 
+html{
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 100px;
+}
+section{
+  
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+::-webkit-scrollbar{
+  display: none; /* Chrome, Safari, Edge */
+}
 /* body {
   wid
   margin: 0;

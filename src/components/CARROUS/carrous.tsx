@@ -1,6 +1,8 @@
 import React from "react";
 import "./carrous.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
 import "@splidejs/react-splide/css";
 import img1 from '../../assets/imgs/carrousel/MARQUILLA.jpg'
 import img2 from '../../assets/imgs/carrousel/MARQUILLA2.jpg'
@@ -14,38 +16,45 @@ import img8 from '../../assets/imgs/carrousel/MARQUILLA8.jpg'
 const Carrous = () => {
   return (
     <div className="carrous">
-      <Splide
+      <Splide extensions={{ AutoScroll }}
         options={{
-          rewind: true,
-          gap: "1rem",
+          gap: "10px",
           perPage: 1,
-          
+          type: "loop",
+          arrows: false,
+          pagination: false,
+          autoScroll: {
+            pauseOnHover: false,
+            pauseOnFocus: true,
+            speed: -5,
+            rewind: true
+          }
         }}
         aria-label="My Favorite Images"
       >
         <SplideSlide>
-          <img src={img1} alt="Image 1" width={100}/>
+          <img src={img1} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img2} alt="Image 1" width={100}/>
+          <img src={img2} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img3} alt="Image 1" width={100}/>
+          <img src={img3} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img4} alt="Image 1" width={100}/>
+          <img src={img4} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img5} alt="Image 1" width={100}/>
+          <img src={img5} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img6} alt="Image 1" width={100}/>
+          <img src={img6} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img7} alt="Image 1" width={100}/>
+          <img src={img7} alt="Image 1" />
         </SplideSlide>
         <SplideSlide>
-          <img src={img8} alt="Image 1" width={100}/>
+          <img src={img8} alt="Image 1" />
         </SplideSlide>
       </Splide>
     </div>
