@@ -29,20 +29,8 @@ const Header = () => {
     <div>
       <Navbar />
       <div className='section'>
-        RENDER DE SEBASTIÁN
+        <h1 className='puff-in-center'>RENDER DE CAMISA</h1>
       </div>
-      {/* <div className="fab-container">
-        <Grow in={checked}
-          style={{ transformOrigin: '0 0 0' }}
-          {...(checked ? { timeout: 1000 } : {})}>
-          <Fab variant="extended" onClick={(e) => handleWindowScroll(e)}>
-            <ArrowDownward sx={{ mr: 1 }} />
-            Navigate
-          </Fab>
-
-        </Grow>
-
-      </div> */}
     </div>
   )
 }
