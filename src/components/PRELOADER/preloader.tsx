@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import "./preloader.css";
+import logob from "../../assets/imgs/logo/Noble.png";
 
 const Preloader = () => {
   return (
-    <div>
-      <h1>contenido preloader</h1>
+    <div className="prel">
+      <img src={logob} alt=""/>
     </div>
-  )
-}
+  );
+};
 
-export default Preloader
+export default Preloader;
