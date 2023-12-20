@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./navbar.css";
 import logo from "../../assets/imgs/logo/Noble.png";
+import { AccountBox, AccountBoxIcon, ShoppingCart } from "@mui/icons-material";
 
 const Navbar = () => {
   const randh = () => {
@@ -47,10 +48,14 @@ const Navbar = () => {
       <div className="navba">
         <div className="links">
           <h1 className="colec">
-            <a href="#" id="select" data-value="COLECCIONES">COLECCIONES</a>
+            <a href="#" id="select" data-value="COLECCIONES">
+              COLECCIONES
+            </a>
           </h1>
           <h1 className="allp">
-            <a href="#" id="select" data-value="PRODUCTOS">PRODUCTOS</a>
+            <a href="#" id="select" data-value="PRODUCTOS">
+              PRODUCTOS
+            </a>
           </h1>
         </div>
         <div className="logo">
@@ -60,10 +65,14 @@ const Navbar = () => {
         </div>
         <div className="links">
           <h1 className="cart">
-            <a href="#" id="select" data-value="CART">CART</a>
+            <a href="#">
+              <ShoppingCart sx={{ mr: 1 }} />
+            </a>
           </h1>
           <h1 className="user">
-            <a href="#" id="select" data-value="USER">USER</a>
+            <a href="#" >
+              <AccountBox sx={{ mr: 1 }} />
+            </a>
           </h1>
         </div>
       </div>
