@@ -1,62 +1,66 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import React, { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import './App.css';
 
-import Banner from './containers/BANNER/banner'
-import Carrousel from './containers/CARROUSEL/carrousel'
-import Footer from './containers/FOOTER/footer'
-import Header from './containers/HEADER/header'
-import Newsletter from './containers/NEWSLETTER/newsletter'
-import Products from './containers/PRODUCTS/products'
-import Script from './containers/SCRIPT/script'
-import { Fab, Grow } from '@mui/material';
-import { ArrowDownward } from '@mui/icons-material';
-
+import Banner from './containers/BANNER/banner';
+import Carrousel from './containers/CARROUSEL/carrousel';
+import Footer from './containers/FOOTER/footer';
+import Header from './containers/HEADER/header';
+import Newsletter from './containers/NEWSLETTER/newsletter';
+import Products from './containers/PRODUCTS/products';
+import Script from './containers/SCRIPT/script';
+import BtnNavigate from './components/BTN_NAVIGATE/btnNavigate';
 
 function App() {
   const [checked, setChecked] = useState(false);
-  const handleChange = () => {
-    setChecked((prev) => !prev);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
   };
 
-  const handleWindowScroll = (e) => {
-    console.log(e.clientY);
-    const newY = window.scrollY + e.clientY + 100; // Ajusta según sea necesario
-    window.scrollTo({
-      top: newY,
-      behavior: 'smooth', // Agrega 'smooth' para un desplazamiento suave
-    });
-  };
   useEffect(() => {
-    setTimeout(() => {
-      setChecked(true);
-    }, 3000);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  useEffect(() => {
+    if (scrollPosition > 200) {
+      setChecked(true);
+    }
+  }, [scrollPosition]);
+
   return (
     <>
       <div>
-        <section><Header /></section>
-        <section><Banner /></section>
-        <section><Carrousel /></section>
-        <section><Script /></section>
-        <section><Products /></section>
-        <section><Newsletter /></section>
-        <section><Footer /></section>
-        <div className="fab-container">
-          <Grow in={checked}
-            style={{ transformOrigin: '0 0 0' }}
-            {...(checked ? { timeout: 1000 } : {})}>
-            <Fab variant="extended" onClick={(e) => handleWindowScroll(e)}>
-              <ArrowDownward sx={{ mr: 1 }} />
-              Navigate
-            </Fab>
-
-          </Grow>
-
-        </div>
+        <BtnNavigate />
+        <section>
+          <Header />
+        </section>
+        <section ref={ref} className={`animated-section ${checked ? 'roll-in-left' : ''}`}>
+          <Banner />
+        </section>
+        <section>
+          <Carrousel />
+        </section>
+        <section>
+          <Script />
+        </section>
+        <section>
+          <Products />
+        </section>
+        <section>
+          <Newsletter />
+        </section>
+        <section>
+          <Footer />
+        </section>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
