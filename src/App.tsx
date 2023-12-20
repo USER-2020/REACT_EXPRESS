@@ -17,6 +17,7 @@ function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [ref, inView] = useInView({ triggerOnce: true });
   const [loader, setLoader] = useState(true);
+  const delay = 3000;
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
@@ -32,7 +33,7 @@ function App() {
   const changuePreloaderState = () => {
     setTimeout(() => {
       setLoader(false);
-    }, 3000)
+    }, delay)
   }
 
   useEffect(() => {
@@ -52,7 +53,7 @@ function App() {
       <div>
         <BtnNavigate />
         <section>
-          <Header />
+          <Header delayRender = {delay}/>
         </section>
         <section ref={ref} className={`animated-section ${checked ? 'roll-in-left' : ''}`}>
           <Banner />
