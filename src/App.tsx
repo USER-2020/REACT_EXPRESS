@@ -55,7 +55,7 @@ function App() {
         <section>
           <Header delayRender = {delay}/>
         </section>
-        <section ref={ref} className={`animated-section ${checked ? 'roll-in-left' : ''}`}>
+        <section>
           <Banner />
         </section>
         <section>
