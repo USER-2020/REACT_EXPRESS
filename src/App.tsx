@@ -54,7 +54,7 @@ function App() {
         <section>
           <Header />
         </section>
-        <section ref={ref} className={`animated-section ${checked ? 'roll-in-left' : ''}`}>
+        <section>
           <Banner />
         </section>
         <section>
