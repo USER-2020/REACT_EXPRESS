@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../../components/NAVBAR/navbar'
-import './header.css'
-import { Fab, Fade, Grow } from '@mui/material'
-import { ArrowDownward, Navigation } from '@mui/icons-material'
-import MyThree from '../../components/THREEJS/myThree'
+import React, { useEffect, useState } from "react";
+import Navbar from "../../components/NAVBAR/navbar";
+import "./header.css";
+import { Fab, Fade, Grow } from "@mui/material";
+import { ArrowDownward, Navigation } from "@mui/icons-material";
+import MyThree from "../../components/THREEJS/myThree";
 
 const Header = ({ delayRender }) => {
   const [checked, setChecked] = useState(false);
@@ -17,7 +17,7 @@ const Header = ({ delayRender }) => {
     const newY = window.scrollY + e.clientY + 100; // Ajusta según sea necesario
     window.scrollTo({
       top: newY,
-      behavior: 'smooth', // Agrega 'smooth' para un desplazamiento suave
+      behavior: "smooth", // Agrega 'smooth' para un desplazamiento suave
     });
   };
   useEffect(() => {
@@ -30,23 +30,24 @@ const Header = ({ delayRender }) => {
     setTimeout(() => {
       setShowRenderSection(true);
     }, delayRender);
-  }, [])
-
+  }, []);
 
   return (
     <div>
       <Navbar />
-      <div className='section'>
-        {showRenderSection && (
-          // <h1 className='puff-in-center'>RENDER DE CAMISA</h1>
+      <div className="section">
+        <h1 className="puff-in-center">RENDER DE CAMISA</h1>
+
+        {/* {showRenderSection && (
+          
 
           <MyThree className={"puff-in-center"} />
 
 
-        )}
+        )} */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
