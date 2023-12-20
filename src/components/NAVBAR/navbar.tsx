@@ -59,7 +59,7 @@ const Navbar = () => {
           </h1>
         </div>
         <div className="logo">
-          <a href="#">
+          <a href="/">
             <img src={logo} alt="Noble de la montaña" />
           </a>
         </div>
