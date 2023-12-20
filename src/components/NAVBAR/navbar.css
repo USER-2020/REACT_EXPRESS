@@ -7,6 +7,19 @@
     justify-content: center;
     align-items: center;
     z-index: 100;
+    animation: 12s fadeIn;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    
+    50% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
 }
 
 .navba {
