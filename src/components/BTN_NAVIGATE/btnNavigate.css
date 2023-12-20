@@ -1,21 +1,28 @@
+/* btnNavigate.css */
 .fab-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.fab-container.show {
-  opacity: 1;
-}
-
-.arrow-button {
-  height: 50px;
-  width: 25px;
-  border-radius: 16px;
-  background-color: #fdfdfd;
-  margin-bottom: 8px;
-}
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 101;
+  }
+  
+  .fab-container.show {
+    opacity: 1;
+  }
+  
+  .fab-container.show .arrow-button {
+    height: 50px;
+    width: 25px;
+    border-radius: 16px;
+    background-color: #fdfdfd;
+    margin-bottom: 8px;
+  }
+  
+  .arrow-icon {
+    /* Add any specific styles for the arrow icon if needed */
+  }
+  
