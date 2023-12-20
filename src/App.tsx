@@ -32,7 +32,7 @@ function App() {
   const changuePreloaderState = () => {
     setTimeout(() => {
       setLoader(false);
-    }, 3000)
+    }, 6000)
   }
 
   useEffect(() => {
