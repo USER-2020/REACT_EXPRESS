@@ -17,7 +17,7 @@ function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [ref, inView] = useInView({ triggerOnce: true });
   const [loader, setLoader] = useState(true);
-  const delay = 3000;
+  const delay = 6000;
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
