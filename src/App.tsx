@@ -10,11 +10,13 @@ import Newsletter from './containers/NEWSLETTER/newsletter';
 import Products from './containers/PRODUCTS/products';
 import Script from './containers/SCRIPT/script';
 import BtnNavigate from './components/BTN_NAVIGATE/btnNavigate';
+import Preloader from './components/PRELOADER/preloader';
 
 function App() {
   const [checked, setChecked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [ref, inView] = useInView({ triggerOnce: true });
+  const [loader, setLoader] = useState(true);
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
@@ -27,14 +29,26 @@ function App() {
     };
   }, []);
 
+  const changuePreloaderState = () => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000)
+  }
+
+  useEffect(() => {
+    changuePreloaderState();
+  }, [])
+
   useEffect(() => {
     if (scrollPosition > 200) {
       setChecked(true);
     }
+
   }, [scrollPosition]);
 
   return (
     <>
+      {loader && <Preloader />}
       <div>
         <BtnNavigate />
         <section>
@@ -59,6 +73,7 @@ function App() {
           <Footer />
         </section>
       </div>
+
     </>
   );
 }
