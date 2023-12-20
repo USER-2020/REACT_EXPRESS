@@ -13,13 +13,13 @@
     text-align: center;
 }
 
-.section h1{
+.section h1 {
     font-size: 200px;
 }
 
 .puff-in-center {
-    -webkit-animation: puff-in-center 3s cubic-bezier(0.17, 0.48, 0.85, 0.4) both;
-    animation: puff-in-center 3s cubic-bezier(0.17, 0.48, 0.85, 0.4) both;
+    -webkit-animation: puff-in-center 1.5s cubic-bezier(0.17, 0.48, 0.85, 0.4) both;
+    animation: puff-in-center 1.5s cubic-bezier(0.17, 0.48, 0.85, 0.4) both;
 }
 
 /* ----------------------------------------------

@@ -3,6 +3,7 @@ import Navbar from '../../components/NAVBAR/navbar'
 import './header.css'
 import { Fab, Fade, Grow } from '@mui/material'
 import { ArrowDownward, Navigation } from '@mui/icons-material'
+import MyThree from '../../components/THREEJS/myThree'
 
 const Header = ({ delayRender }) => {
   const [checked, setChecked] = useState(false);
@@ -37,7 +38,11 @@ const Header = ({ delayRender }) => {
       <Navbar />
       <div className='section'>
         {showRenderSection && (
-          <h1 className='puff-in-center'>RENDER DE CAMISA</h1>
+          // <h1 className='puff-in-center'>RENDER DE CAMISA</h1>
+
+          <MyThree className={"puff-in-center"} />
+
+
         )}
       </div>
     </div>
