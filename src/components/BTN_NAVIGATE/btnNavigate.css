@@ -8,8 +8,21 @@
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 101;
-  }
-  
+    animation: 12s fadeIn;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    
+    50% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+}
+
   .fab-container.show {
     opacity: 1;
   }
