@@ -34,7 +34,7 @@ const Bannertext = () => {
           <h1>FUKYU - Nada Personal (Sweater)</h1>
           <div className="formP">
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
+            <InputLabel className='inputT' id="demo-simple-select-standard-label">
               Color
             </InputLabel>
             <Select
@@ -51,7 +51,7 @@ const Bannertext = () => {
             </Select>
           </FormControl>
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
+            <InputLabel className='inputT' id="demo-simple-select-standard-label">
               Talla
             </InputLabel>
             <Select
