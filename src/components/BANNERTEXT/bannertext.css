@@ -60,14 +60,19 @@
     align-items: center;
 }
 
+.textP .formP .inputT {
+    font-family: "MighaThinEx";
+    font-size: 16px;
+    color: #fdfdfd;
+}
 
 .textP h2 {
-    font-family: "MighaLight";
+    font-family: "MighaMediumItalic";
     font-size: 3vh;
     color: #fdfdfd;
 }
 
 .textP h1 {
-    font-family: "MighaMediumItalic";
+    font-family: "MighaLight";
     font-size: 5.5vh;
 }
