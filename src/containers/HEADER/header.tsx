@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/NAVBAR/navbar";
 import "./header.css";
+import shirt1 from "../../assets/imgs/header/FRONT.png";
+import shirt2 from "../../assets/imgs/header/BACK.png";
 import { Fab, Fade, Grow } from "@mui/material";
 import { ArrowDownward, Navigation } from "@mui/icons-material";
 import MyThree from "../../components/THREEJS/myThree";
@@ -36,15 +38,17 @@ const Header = ({ delayRender }) => {
     <div>
       <Navbar />
       <div className="section">
-        <h1 className="puff-in-center">RENDER DE CAMISA</h1>
-
-        {/* {showRenderSection && (
-          
-
-          <MyThree className={"puff-in-center"} />
-
-
-        )} */}
+        <div className="shirts">
+          <div className="shirt1">
+            <img src={shirt1} alt="" />
+          </div>
+          <div className="texto">
+            ATREVETETE SALTE DEL CLOSE
+          </div>
+          <div className="shirt2">
+            <img src={shirt2} alt="" />
+          </div>
+        </div>
       </div>
     </div>
   );

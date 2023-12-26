@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./navbar.css";
-import logo from "../../assets/imgs/logo/Noble.png";
+import logo from "../../assets/imgs/logo/Noble4.png";
 import { AccountBox, AccountBoxIcon, ShoppingCart } from "@mui/icons-material";
 
 const Navbar = () => {
@@ -47,16 +47,27 @@ const Navbar = () => {
     <div className="navb">
       <div className="navba">
         <div className="links">
+          <div className="linkZ">
           <h1 className="colec">
             <a href="#" id="select" data-value="COLECCIONES">
               COLECCIONES
             </a>
           </h1>
+          </div>
+          <div className="linkZ">
           <h1 className="allp">
             <a href="#" id="select" data-value="PRODUCTOS">
               PRODUCTOS
             </a>
           </h1>
+          </div>
+          <div className="linkZ">
+          <h1 className="gallery">
+            <a href="#" id="select" data-value="GALERÍA">
+              GALERÍA
+            </a>
+          </h1>
+          </div>
         </div>
         <div className="logo">
           <a href="/">
@@ -70,7 +81,7 @@ const Navbar = () => {
             </a>
           </h1>
           <h1 className="user">
-            <a href="#" >
+            <a href="/dashboard" >
               <AccountBox sx={{ mr: 1 }} />
             </a>
           </h1>

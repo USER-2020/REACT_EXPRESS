@@ -1,5 +1,5 @@
 .bannerT{
-    background-color: #141414;
+    background-color: var(--blanc);
     flex: 3;
     margin-top: 0px !important;
     margin: 4px;
@@ -9,7 +9,7 @@
 }
 
 .bannerT .newL {
-    background-color: #fdfdfd;
+    background-color: var(--noir);
     flex: 1;
     margin-top: 0px !important;
     margin: 4px;
@@ -24,7 +24,7 @@
     margin-bottom: 20px;
     font-family: "MighaMedium";
     font-size: 10vh;
-    color: #141414;
+    color: var(--blanc);
     text-align: start;
 }
 
@@ -32,12 +32,12 @@
     margin: 0;
     font-family: "MighaThin";
     font-size: 4vh;
-    color: #141414;
+    color: var(--blanc);
     text-align: start;
 }
 
 .bannerT .prodI {
-    background-color: #9A1423;
+    background-color: #FFBF00;
     flex: 2;
     margin: 4px;
     padding: 30px;
@@ -50,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    color: #FDFDFD;
+    color: var(--noir);
 }
 
 .textP .formP {
@@ -63,16 +63,16 @@
 .textP .formP .inputT {
     font-family: "MighaThinEx";
     font-size: 16px;
-    color: #fdfdfd;
+    color: var(--noir);
 }
 
 .textP h2 {
     font-family: "MighaMediumItalic";
-    font-size: 3vh;
-    color: #fdfdfd;
+    font-size: 4vh;
+    color: var(--noir);
 }
 
 .textP h1 {
     font-family: "MighaLight";
-    font-size: 5.5vh;
+    font-size: 8vh;
 }

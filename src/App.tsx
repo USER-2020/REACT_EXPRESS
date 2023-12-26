@@ -11,6 +11,8 @@ import Products from './containers/PRODUCTS/products';
 import Script from './containers/SCRIPT/script';
 import BtnNavigate from './components/BTN_NAVIGATE/btnNavigate';
 import Preloader from './components/PRELOADER/preloader';
+import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
+import routes from './routes';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -49,31 +51,17 @@ function App() {
 
   return (
     <>
-      {loader && <Preloader />}
-      <div>
-        <BtnNavigate />
-        <section>
-          <Header delayRender = {delay}/>
-        </section>
-        <section>
-          <Banner />
-        </section>
-        <section>
-          <Carrousel />
-        </section>
-        <section>
-          <Script />
-        </section>
-        <section>
-          <Products />
-        </section>
-        <section>
-          <Newsletter />
-        </section>
-        <section>
-          <Footer />
-        </section>
-      </div>
+      <Router>
+        <Routes>
+          {routes.map((route) => (
+            <Route
+              key={route.key}
+              path={route.route}
+              element={route.component}
+            />
+          ))}
+        </Routes>
+      </Router>
 
     </>
   );

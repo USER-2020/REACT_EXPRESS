@@ -1,7 +1,7 @@
 .banner {
     width: 100%;
-    height: calc(100vh - 70px);
-    background-color: rgb(14, 14, 14);
+    height: calc(100vh - 50px);
+    background-color: var(--blanc);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
