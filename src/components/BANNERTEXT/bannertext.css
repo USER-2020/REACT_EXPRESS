@@ -37,7 +37,7 @@
 }
 
 .bannerT .prodI {
-    background-color: #9A1423;
+    background-color: #FFBF00;
     flex: 2;
     margin: 4px;
     padding: 30px;
@@ -50,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    color: #FDFDFD;
+    color: var(--noir);
 }
 
 .textP .formP {
@@ -63,13 +63,13 @@
 .textP .formP .inputT {
     font-family: "MighaThinEx";
     font-size: 16px;
-    color: #fdfdfd;
+    color: var(--noir);
 }
 
 .textP h2 {
     font-family: "MighaMediumItalic";
     font-size: 3vh;
-    color: #fdfdfd;
+    color: var(--noir);
 }
 
 .textP h1 {
