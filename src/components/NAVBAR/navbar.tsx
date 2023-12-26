@@ -81,7 +81,7 @@ const Navbar = () => {
             </a>
           </h1>
           <h1 className="user">
-            <a href="#" >
+            <a href="/dashboard" >
               <AccountBox sx={{ mr: 1 }} />
             </a>
           </h1>
