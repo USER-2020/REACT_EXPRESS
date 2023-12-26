@@ -43,6 +43,8 @@
   src: url('./assets/fonts/migha/Migha-ThinExpanded.otf') format('opentype');
 }
 
+
+
 :root {
   font-family: 'MighaCNTR';
   line-height: 1.5;
@@ -56,6 +58,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --noir: #141414;
+  --blanc: #fdfdfd;
 }
 
 a {
@@ -74,7 +79,7 @@ body {
 
 html{
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 50px;
 }
 section{
   

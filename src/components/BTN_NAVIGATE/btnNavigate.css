@@ -31,11 +31,11 @@
     height: 50px;
     width: 25px;
     border-radius: 16px;
-    background-color: #fdfdfd;
+    background-color: var(--noir);
     margin-bottom: 8px;
   }
   
   .arrow-icon {
-    /* Add any specific styles for the arrow icon if needed */
+    color: var(--blanc);
   }
   

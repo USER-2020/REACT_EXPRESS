@@ -3,7 +3,7 @@ import Product from '../../components/PRODUCT/product'
 import './products.css'
 const Products = () => {
   return (
-    <div>Products
+    <div className="prodS">
       <Product/>
       <Product/>
       <Product/>
