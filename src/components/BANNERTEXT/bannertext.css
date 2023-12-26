@@ -1,5 +1,5 @@
 .bannerT{
-    background-color: #141414;
+    background-color: var(--blanc);
     flex: 3;
     margin-top: 0px !important;
     margin: 4px;
@@ -9,7 +9,7 @@
 }
 
 .bannerT .newL {
-    background-color: #fdfdfd;
+    background-color: var(--noir);
     flex: 1;
     margin-top: 0px !important;
     margin: 4px;
@@ -24,7 +24,7 @@
     margin-bottom: 20px;
     font-family: "MighaMedium";
     font-size: 10vh;
-    color: #141414;
+    color: var(--blanc);
     text-align: start;
 }
 
@@ -32,7 +32,7 @@
     margin: 0;
     font-family: "MighaThin";
     font-size: 4vh;
-    color: #141414;
+    color: var(--blanc);
     text-align: start;
 }
 

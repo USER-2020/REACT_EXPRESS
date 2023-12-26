@@ -8,9 +8,6 @@ const Script = () => {
       <div className="scriptt">
         <Scripttext/>
       </div>
-      {/* <div className="scriptb">
-        <Scriptbut/>
-      </div> */}
     </div>
   );
 };
