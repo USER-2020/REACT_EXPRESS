@@ -7,6 +7,7 @@ const dbConfig = {
     password: 'admin',
     database: 'noble_db',
     insecureAuth: true, // Agrega esta línea para usar el protocolo de autenticación más antiguo
+    multipleStatements: true,  // Agrega esta línea
 };
 
 const connection = mysql.createConnection(dbConfig);

@@ -1,7 +1,7 @@
 
 
 import Icon from "@mui/material/Icon";
-import Dashboard from "./backend/dashboard/Dashboard";
+import Dashboard from "./backend/adminPanel/Dashboard";
 import Home from "./components/HOME/home";
 const routes = [
   {
@@ -20,6 +20,39 @@ const routes = [
     route: "/dashboard",
     component: <Dashboard />,
   },
+  {
+    type: "collapse",
+    name: "Productos Admin",
+    key: "productosAdmin",
+    icon: <Icon fontSize="small">productos</Icon>,
+    route: "/productosAdmin",
+    component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "Clientes",
+    key: "clientesAdmin",
+    icon: <Icon fontSize="small">clientes</Icon>,
+    route: "/clientesAdmin",
+    component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "Colecciones Admin",
+    key: "coleccionesAdmin",
+    icon: <Icon fontSize="small">clientes</Icon>,
+    route: "/coleccionesAdmin",
+    component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "Ordenes Admin",
+    key: "ordenesAdmin",
+    icon: <Icon fontSize="small">clientes</Icon>,
+    route: "/ordenesAdmin",
+    component: <Dashboard />,
+  },
+
   // {
   //   type: "collapse",
   //   name: "Tables",
