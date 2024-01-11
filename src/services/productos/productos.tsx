@@ -14,3 +14,13 @@ export const getAllProducts = (page, pageSize) =>
             pageSize,
         },
     });
+
+//Agregar producto
+export const addProducts = (formData) => {
+    console.log('FormData:', formData); // Agrega este log para verificar formData
+    return axios.post(`${base}/add`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        }
+    });
+};
