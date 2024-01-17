@@ -9,7 +9,7 @@ import TableCell from '@mui/material/TableCell'
 import TableBody from '@mui/material/TableBody'
 import Link from '@mui/material/Link'
 import Pagination from '@mui/material/Pagination'
-import { getAllProducts } from '../../../services/productos/productos'
+import { deleteProduct, getAllProducts } from '../../../services/productos/productos'
 import Fab from '@mui/material/Fab'
 import AddIcon from '@mui/icons-material/Add';
 import ModalAddProducts from './modalAddProductos/modalAddProducts'
@@ -17,15 +17,21 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import { Modal, ModalHeader } from 'reactstrap'
 // import { dataStore } from './../../../data/dataStore';
+import ProductosAdmin from './productosAdmin';
+import ModalUpdateProducts from './modalUpdateProductos/modalUpdateProducts'
 
 const TableProductosAdmin = () => {
     const [productos, setProductos] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalResults, setTotalResults] = useState();
     const [pages, setPages] = useState();
+    const [idProduct, setIdProduct] = useState();
 
     /* Modal Fomrulario productos */
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    /* Modal actualizar productos */
+    const [isModalOpenUpdate, setIsModalOpenUpdate] = useState(false);
 
     const getProductos = () => {
         getAllProducts(currentPage, 10)
@@ -42,6 +48,18 @@ const TableProductosAdmin = () => {
             })
             .catch((err) => console.log(err));
     };
+
+    //Eliminar producto
+    const deleteOne = (idProducto) => {
+        deleteProduct(idProducto)
+            .then((res) => {
+                alert("Producto eliminado");
+                console.log(res);
+                getProductos();
+
+            }).catch((err) => console.log(err));
+    }
+
 
     const handlePaginate = (event, value) => {
         setCurrentPage(value);
@@ -97,8 +115,8 @@ const TableProductosAdmin = () => {
                                             variant="contained"
                                             aria-label="Disabled elevation buttons"
                                         >
-                                            <Button>Editar</Button>
-                                            <Button color='error'>Eliminar</Button>
+                                            <Button onClick={() => { setIsModalOpenUpdate(true); setIdProduct(row.id) }}>Editar</Button>
+                                            <Button color='error' onClick={() => deleteOne(row.id)}>Eliminar</Button>
                                         </ButtonGroup>
                                     </TableCell>
                                     {/* <TableCell align="right">{`$${row.amount}`}</TableCell> */}
@@ -126,6 +144,8 @@ const TableProductosAdmin = () => {
                 <AddIcon sx={{ mr: 1, }} />
                 Agregar
             </Fab>
+
+            {/* //Modal Agreagr productos */}
             <Modal
                 size='lg'
                 style={{ top: 60 }}
@@ -134,7 +154,19 @@ const TableProductosAdmin = () => {
 
             >
                 <ModalHeader toggle={() => setIsModalOpen(false)}>Ingresa aquí tu producto</ModalHeader>
-                <ModalAddProducts handleClose={() => setIsModalOpen(false)} valueModalVisible={isModalOpen} />
+                <ModalAddProducts handleClose={() => setIsModalOpen(false)} valueModalVisible={isModalOpen} updateProducts={() => getProductos()} />
+            </Modal>
+
+            {/* //Modal actualizar ProductosAdmin */}
+            <Modal
+                size='lg'
+                style={{ top: 60 }}
+                isOpen={isModalOpenUpdate}
+                toggle={() => setIsModalOpenUpdate(false)}
+
+            >
+                <ModalHeader toggle={() => setIsModalOpenUpdate(false)}>Actualice aca su producto</ModalHeader>
+                <ModalUpdateProducts handleClose={() => setIsModalOpenUpdate(false)} valueModalVisible={isModalOpenUpdate} updateProducts={() => getProductos()} idProducto={idProduct} />
             </Modal>
         </div>
 

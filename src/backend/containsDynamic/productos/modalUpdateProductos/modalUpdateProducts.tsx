@@ -1,23 +1,18 @@
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Fade from '@mui/material/Fade'
-import Typography from '@mui/material/Typography'
+import React, { useEffect, useState } from 'react'
+import { productById, updateProduct } from '../../../../services/productos/productos';
+import Fade from '@mui/material/Fade';
+import Box from '@mui/material/Box';
+import { Form } from 'reactstrap';
 import FormGroup from '@mui/material/FormGroup';
 import TextField from '@mui/material/TextField';
-import React, { useState } from 'react'
-import { addProducts } from '../../../../services/productos/productos';
-import Avatar from '@mui/material/Avatar';
-import Input from '@mui/material/Input';
-import './modalAddProducts.css';
-import { categories } from '../../../data/categoriesData';
-import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { categories } from '../../../data/categoriesData';
 import { tallas } from '../../../data/tallasData';
-import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import { Form } from 'reactstrap';
+import { Avatar, Button, Input } from '@mui/material';
 
-const ModalAddProducts = ({ handleClose, valueModalVisible, updateProducts }) => {
+const ModalUpdateProducts = ({ valueModalVisible, handleClose, updateProducts, idProducto }) => {
     const [productData, setProductData] = useState({
         nombre: '',
         categoria: '',
@@ -69,6 +64,29 @@ const ModalAddProducts = ({ handleClose, valueModalVisible, updateProducts }) =>
         }
     };
 
+    const infoProduct = () => {
+        productById(idProducto)
+            .then((res) => {
+                console.log("Respuesta del producto por id", res);
+                setProductData({
+                    nombre: res.data.nombre,
+                    categoria: res.data.categoria,
+                    precio: res.data.precio,
+                    stock: res.data.stock,
+                    coleccion: res.data.coleccion,
+                    talla: res.data.talla,
+                    color: res.data.color,
+                    tipo_prenda: res.data.tipo_prenda,
+                    imagenRuta: res.data.imagenRuta,
+                });
+                // No uses URL.createObjectURL si solo tienes la URL de la imagen
+                setImagenPreview(res.data.imagenRuta);
+
+            }).catch((err) => { console.log(err) })
+    }
+
+
+
 
     // const handleFileChange = (e) => {
 
@@ -96,7 +114,7 @@ const ModalAddProducts = ({ handleClose, valueModalVisible, updateProducts }) =>
 
         console.log(formData);
         // Enviar formData al servidor
-        addProducts(formData)
+        updateProduct(idProducto, formData)
             .then((res) => {
                 console.log(res);
                 handleClose();
@@ -106,6 +124,9 @@ const ModalAddProducts = ({ handleClose, valueModalVisible, updateProducts }) =>
     };
 
 
+    useEffect(() => {
+        infoProduct();
+    }, [])
     return (
         <Fade in={valueModalVisible}>
             <Box sx={{ padding: '20px' }}>
@@ -232,7 +253,7 @@ const ModalAddProducts = ({ handleClose, valueModalVisible, updateProducts }) =>
                     </FormGroup>
 
                     <Button onClick={handleSubmit} sx={{ mt: 2 }}>
-                        Guardar producto
+                        Actualizar producto
                     </Button>
                     <Button onClick={handleClose} sx={{ mt: 2, ml: 2 }}>
                         Cerrar modal
@@ -243,4 +264,4 @@ const ModalAddProducts = ({ handleClose, valueModalVisible, updateProducts }) =>
     )
 }
 
-export default ModalAddProducts
+export default ModalUpdateProducts

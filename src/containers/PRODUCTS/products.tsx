@@ -32,12 +32,6 @@ const Products = () => {
       {productos && productos.length > 0 && productos.map((productoInfo) => (
         <Product key={productoInfo.id} product={productoInfo} />
       ))}
-      {/* <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product /> */}
     </div>
 
   )
