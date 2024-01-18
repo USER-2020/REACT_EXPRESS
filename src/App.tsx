@@ -13,6 +13,7 @@ import BtnNavigate from './components/BTN_NAVIGATE/btnNavigate';
 import Preloader from './components/PRELOADER/preloader';
 import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 import routes from './routes';
+import { UserRoleProvider } from './services/defaultValues';
 
 function App() {
   const [checked, setChecked] = useState(false);
@@ -51,17 +52,19 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Routes>
-          {routes.map((route) => (
-            <Route
-              key={route.key}
-              path={route.route}
-              element={route.component}
-            />
-          ))}
-        </Routes>
-      </Router>
+      <UserRoleProvider>
+        <Router>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.key}
+                path={route.route}
+                element={route.component}
+              />
+            ))}
+          </Routes>
+        </Router>
+      </UserRoleProvider>
 
     </>
   );

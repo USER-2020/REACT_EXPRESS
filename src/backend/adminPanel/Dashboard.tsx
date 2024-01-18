@@ -22,6 +22,13 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 import DynamicContent from '../containsDynamic/dynamicContent';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import { LogoutOutlined } from '@mui/icons-material';
+import { Navigate, Link as RouterLink, useNavigate } from 'react-router-dom';
+import { logoutUser, useUserRole } from '../../services/defaultValues';
 
 function Copyright(props: any) {
   return (
@@ -89,11 +96,21 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
+
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const navigate = useNavigate();
+  const { setUserRole } = useUserRole();
+  const handleLogout = () => {
+    logoutUser();
+    setUserRole();
+    navigate('/');
+
+
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -152,6 +169,21 @@ export default function Dashboard() {
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List>
+          <Divider sx={{ my: 1 }} />
+          {/* Botón para ir a la tienda */}
+          <ListItemButton component={RouterLink} to="/">
+            <ListItemIcon>
+              <StorefrontIcon />
+            </ListItemIcon>
+            <ListItemText primary="Ir a la Tienda" />
+          </ListItemButton>
+          {/* Botón de logout */}
+          <ListItemButton onClick={() => handleLogout()}>
+            <ListItemIcon>
+              <LogoutOutlined />
+            </ListItemIcon>
+            <ListItemText primary="Logout" />
+          </ListItemButton>
         </Drawer>
         <Box
           component="main"

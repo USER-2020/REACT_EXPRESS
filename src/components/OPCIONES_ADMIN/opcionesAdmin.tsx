@@ -5,21 +5,25 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { logoutUser } from '../../services/defaultValues'
+import { logoutUser, useUserRole } from '../../services/defaultValues'
 import { useNavigate } from 'react-router-dom'
 
 const OpcionesAdmin = ({ handleClose }) => {
+
+    const { setUserRole } = useUserRole();
 
     const navigate = useNavigate();
 
     const onLogout = () => {
         logoutUser();
+        setUserRole();
         handleClose();
     }
     const handleNavigationClick = (option) => {
         console.log(`Selected navigation option: ${option}`);
         navigate(option);
         handleClose();
+
         // Aquí puedes manejar la navegación a las diferentes opciones.
     };
     return (

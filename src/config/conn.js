@@ -22,6 +22,50 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors());
 
+// Middleware para autenticar el token y verificar el rol
+function authenticateTokenAndRoleAdmin(req, res, next) {
+  const token = req.header('Authorization');
+
+  if (!token) {
+    return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+  }
+
+  jwt.verify(token.replace('Bearer ', ''), 'secreto_del_servidor', (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: 'Token de autenticación inválido' });
+    }
+
+    // Imprimir información del usuario en la consola
+    console.log('Información del usuario:', user);
+
+    // Verificar el rol del usuario
+    if (user.role !== 'ADMIN') {
+      return res.status(403).json({ message: 'Acceso no autorizado' });
+    }
+
+    req.user = user;
+    next();
+  });
+}
+
+
+function authenticateToken(req, res, next) {
+  const token = req.header('Authorization');
+
+  if (!token) {
+    return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+  }
+
+  jwt.verify(token.replace('Bearer ', ''), 'secreto_del_servidor', (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: 'Token de autenticación inválido' });
+    }
+
+    req.user = user;
+    next();
+  });
+}
+
 //middleWare Multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -329,49 +373,7 @@ function findUser(user) {
 }
 
 
-// Middleware para autenticar el token y verificar el rol
-function authenticateTokenAndRoleAdmin(req, res, next) {
-  const token = req.header('Authorization');
 
-  if (!token) {
-    return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
-  }
-
-  jwt.verify(token.replace('Bearer ', ''), 'secreto_del_servidor', (err, user) => {
-    if (err) {
-      return res.status(403).json({ message: 'Token de autenticación inválido' });
-    }
-
-    // Imprimir información del usuario en la consola
-    console.log('Información del usuario:', user);
-
-    // Verificar el rol del usuario
-    if (user.role !== 'ADMIN') {
-      return res.status(403).json({ message: 'Acceso no autorizado' });
-    }
-
-    req.user = user;
-    next();
-  });
-}
-
-
-function authenticateToken(req, res, next) {
-  const token = req.header('Authorization');
-
-  if (!token) {
-    return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
-  }
-
-  jwt.verify(token.replace('Bearer ', ''), 'secreto_del_servidor', (err, user) => {
-    if (err) {
-      return res.status(403).json({ message: 'Token de autenticación inválido' });
-    }
-
-    req.user = user;
-    next();
-  });
-}
 
 
 // Obtener todos los usuarios (requiere autenticación)

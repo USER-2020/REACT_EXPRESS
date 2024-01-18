@@ -13,14 +13,15 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import { authLogin, decodeJWT } from '../../services/auth/login';
-import { userActivation } from '../../services/defaultValues';
+import { useUserRole, userActivation } from '../../services/defaultValues';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = ({handleClose}) => {
+const Login = ({ handleClose }) => {
 
     const defaultTheme = createTheme();
     const navigate = useNavigate(); // Obtener la función de navegación
+    const { setUserRole } = useUserRole();
 
 
 
@@ -37,6 +38,8 @@ const Login = ({handleClose}) => {
                 console.log(res.data.token);
                 console.log(res.data.role);
                 userActivation(res.data.token, res.data.role);
+                setUserRole(res.data.role);
+
                 // Redirigir al usuario a la ruta deseada después de iniciar sesión
                 if (res.data.role === 'ADMIN') {
                     navigate('/dashboard');
